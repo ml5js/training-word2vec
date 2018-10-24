@@ -10,9 +10,6 @@
 pip install gensim
 ```
 
-- If you are familiar with Docker, you can also use this  ~~[container]()~~ (soon!)
-
-
 ## Train the model
 
 1. Clone this repository or [download this python script](https://github.com/ml5js/training-word2vec/blob/master/train.py)
