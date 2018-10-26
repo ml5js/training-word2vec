@@ -1,3 +1,4 @@
 *.txt
 .vscode/
 vectors.json
+venv/
