@@ -11,7 +11,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Text File to Word2Vec Vectors")
 
 #Required input file
-parser.add_argument("input", help="Path to the the text file")
+parser.add_argument("input", help="Path to the input text file")
 
 #Optional arguments (room for further extending the script's capabilities)
 parser.add_argument("-o", "--output", default="vector.txt", help="Path of the output text file (default: vector)")
