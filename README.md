@@ -26,7 +26,7 @@ python train.py data.txt
 3. If you would like to add an output file path you can use the additional argument `-o` for that.
 
 ```
-python train.py data.txt -o output.txt
+python train.py data.txt -o output.json
 ```
 
 4. The script will save a file called `vectors.json`, or whatever you passed as the output argument. You can then use this file the [ml5.js word2vec examples](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec).
