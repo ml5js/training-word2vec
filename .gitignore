@@ -1,4 +1,9 @@
 *.txt
 .vscode/
 vectors.json
+<<<<<<< HEAD
 venv/
+*.json
+=======
+venv/
+>>>>>>> e7312bfe33e56282dbca9546cc3564b0780571b9

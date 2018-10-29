@@ -5,6 +5,7 @@ import re
 import json
 import sys
 import argparse
+import glob
 
 #Parsing for the user arguments 
 parser = argparse.ArgumentParser(description="Text File to Word2Vec Vectors")
@@ -18,10 +19,10 @@ parser.add_argument("-o", "--output", default="vector.json", help="Path to the o
 args = parser.parse_args()
 
 #Using the arguments from the arg dictionary
-text = open(args.input).read().lower().replace("\n", " ")
+# text = open(args.input).read().lower().replace("\n", " ")
 output_text_file = args.output
 
-listOfFiles = glob.glob(path + '/*.txt')
+listOfFiles = glob.glob(args.input + '/*.txt')
 
 final_sentences = []
 for file in listOfFiles:
@@ -30,7 +31,7 @@ for file in listOfFiles:
     sentences = re.split("[.?!]", text)
     # Split each sentence into words! (this could also be improved!)
     for sentence in sentences:
-        words = re.split("\W+", sentence)
+        words = re.split(r'\W+', sentence)
         final_sentences.append(words)
 
 
@@ -48,5 +49,5 @@ for line in f:
 
 # Save to a JSON file
 # Could make this an optional argument to specify output file
-with open(output_text_file[:-4] + ".json", "w") as out:
+with open(output_text_file[:-4] + "json", "w") as out:
     json.dump(v, out)
