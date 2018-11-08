@@ -18,10 +18,13 @@ pip install gensim
 git clone https://github.com/ml5js/training-word2vec/
 ```
 
-2. The script in its current form only supports training from a single text file. Copy your text file into this directory and run `train.py` with the name of the file.
+2. The script supports training from many files. 
+Create a new folder and copy your text file into this directory. Now run `train.py` with the name of the folder.
+
+Example:
 
 ```
-python train.py data.txt
+python train.py inputs/
 ```
 3. If you would like to add an output file path you can use the additional argument `-o` for that.
 
