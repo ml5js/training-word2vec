@@ -18,18 +18,20 @@ pip install gensim
 git clone https://github.com/ml5js/training-word2vec/
 ```
 
-2. The script supports training from many files. 
-Create a new folder and copy your text file into this directory. Now run `train.py` with the name of the folder.
+2. The script supports training from a single text file or directory of files. Create a text file or folder of multiple files. Now run `train.py` with the name of the file or folder.
 
 Example:
 
 ```
-python train.py inputs/
+python train.py file.xt
+python train.py files/
 ```
-3. If you would like to add an output file path you can use the additional argument `-o` for that.
+
+
+3. The script will output a `vectors.txt` and `vectors.json` file, however, if you would like to specify an output file name you can use the additional argument `-o` for that.
 
 ```
 python train.py data.txt -o output.json
 ```
 
-4. The script will save a file called `vectors.json`, or whatever you passed as the output argument. You can then use this file the [ml5.js word2vec examples](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec).
+4. The output JSON file  can be used now with the [ml5.js word2vec examples](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec).
