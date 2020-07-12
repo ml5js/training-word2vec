@@ -7,7 +7,7 @@
 - Set up a python environment with [gensim](https://radimrehurek.com/gensim/) installed. [More detailed instructions here](https://ml5js.org/docs/training-setup.html). You can also follow this [video tutorial about Python virtualenv](https://youtu.be/nnhjvHYRsmM).
 
 ```
-pip install gensim
+pip install -r requirements.txt
 ```
 
 ## Train the model
@@ -34,4 +34,16 @@ python train.py files/
 python train.py data.txt -o output.json
 ```
 
-4. The output JSON file  can be used now with the [ml5.js word2vec examples](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec).
+4. The output JSON file can be used now with the [ml5.js word2vec examples](https://github.com/ml5js/ml5-examples/tree/master/p5js/Word2Vec).
+
+## Advanced tokenization
+
+The default tokenizer is very basic. You can ask the script to use NLTK's
+tokenizer with the `--tokenizer` argument.
+
+Additionally, the script can remove stop words.
+
+```
+python train.py files/ -t nltk --remove-stop-words
+```
+
