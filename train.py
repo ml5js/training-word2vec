@@ -70,7 +70,7 @@ if args.tokenizer == TOKENIZER_CHOICE_NLTK:
 # Each sentence is an array of words.
 final_sentences = []
 for file in listOfFiles:
-    text = open(file).read().lower().replace("\n", " ") # Remove lineabreaks
+    text = open(file,encoding="utf-8").read().lower().replace("\n", " ") # Remove lineabreaks
 
     # Remove all the stop words before running the actual tokenization.
     # I think it's a little bit cleaner to do it here and may perform because
@@ -100,7 +100,7 @@ model = Word2Vec(final_sentences, size=100, window=5, min_count=5, workers=4)
 model.wv.save_word2vec_format(output_text_file, binary=False)
 
 # Open up that text file and convert to JSON
-f = open(output_text_file)
+f = open(output_text_file,encoding="utf-8")
 v = {"vectors": {}}
 for line in f:
     w, n = line.split(" ", 1)
@@ -109,5 +109,5 @@ for line in f:
 # Save to a JSON file
 # Could make this an optional argument to specify output file
 with open(output_text_file[:-4] + "json", "w") as out:
-    json.dump(v, out)
-
+    json.dump(v, out, ensure_ascii=False)
+    
